@@ -1,0 +1,11 @@
+# Minimal dependencies for the FastAPI serving image. Deliberately
+# excludes mlflow/matplotlib/scipy/pytest, which are training/dev-only --
+# pulling mlflow into a serving image drags in Flask, gunicorn,
+# databricks-sdk, pyarrow, and a dozen other packages nothing at
+# inference time needs. See requirements.txt for the full dev/train set.
+numpy
+scikit-learn
+opencv-python-headless<5
+fastapi
+uvicorn[standard]
+python-multipart

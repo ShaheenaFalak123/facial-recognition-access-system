@@ -1,0 +1,14 @@
+# Full dev/training environment. For the minimal serving-only image, see
+# requirements-serve.txt (used by the Dockerfile).
+numpy
+scikit-learn
+Pillow
+matplotlib
+opencv-python-headless<5
+fastapi
+uvicorn[standard]
+python-multipart
+mlflow
+pytest
+httpx
+ruff

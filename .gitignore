@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Env / secrets
+.env
+.env.*
+
+# Data / models
+# face_classifier.joblib IS committed intentionally (~500KB) so CI and
+# Hugging Face Spaces can build/serve without retraining or re-downloading
+# LFW there. A "real" production setup would pull from a model registry
+# (MLflow Model Registry / S3) instead -- this is a pragmatic shortcut
+# documented in the README, not an oversight.
+ml-service/data/raw/
+ml-service/mlruns/
+ml-service/mlflow.db
+ml-service/artifacts/
+
+# OS
+.DS_Store
+Thumbs.db
