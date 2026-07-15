@@ -1,6 +1,8 @@
 """Load the LFW subset used for this project and produce a binary-labeled,
 stratified train/test split: 1 = Arnold Schwarzenegger, 0 = anyone else.
 """
+import sys
+
 import numpy as np
 from scipy.ndimage import rotate
 from sklearn.datasets import fetch_lfw_people
@@ -61,7 +63,8 @@ def load_binary_face_dataset():
 
     print(
         f"Ran {len(raw.images)} images through the inference detection pipeline: "
-        f"{n_dropped} dropped (no face detected), {len(features)} kept."
+        f"{n_dropped} dropped (no face detected), {len(features)} kept.",
+        file=sys.stderr,
     )
 
     X = np.array(features, dtype=np.float32)
