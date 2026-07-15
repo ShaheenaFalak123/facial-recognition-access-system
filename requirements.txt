@@ -1,0 +1,8 @@
+# Root-level requirements.txt is for Streamlit Community Cloud, which
+# deploys streamlit_demo/app.py. See ml-service/requirements.txt (full
+# dev/train set) and ml-service/requirements-serve.txt (FastAPI serving
+# image) for the ml-service component's own dependencies.
+streamlit
+numpy
+scikit-learn
+opencv-python-headless<5
