@@ -59,7 +59,10 @@ jobs:
         with:
           context: ml-service
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/face-verification-api:latest
+          # GHCR requires a lowercase image path; github.repository_owner
+          # preserves the account's mixed-case name (ShaheenaFalak123),
+          # which docker/build-push-action rejects, so it's hardcoded here.
+          tags: ghcr.io/shaheenafalak123/face-verification-api:latest
 
   deploy-to-hf-spaces:
     needs: build-and-push-image
