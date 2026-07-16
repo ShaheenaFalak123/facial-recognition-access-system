@@ -10,3 +10,4 @@ Status: work in progress — details filled in as each piece is built.
 ## Why this exists
 
 Built to demonstrate production ML engineering skills (testing, containerization, CI/CD, deployment, monitoring) and real SQL analytics skills (window functions, CTEs, query optimization) that aren't visible from notebook-only projects.
+
