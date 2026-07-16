@@ -2,7 +2,7 @@ name: ml-service CI/CD
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "ml-service/**"
       - ".github/workflows/ml-service-ci.yml"
@@ -40,7 +40,7 @@ jobs:
   build-and-push-image:
     needs: test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     permissions:
       contents: read
       packages: write
@@ -64,7 +64,7 @@ jobs:
   deploy-to-hf-spaces:
     needs: build-and-push-image
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4
         with:
