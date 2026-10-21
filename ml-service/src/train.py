@@ -107,7 +107,8 @@ def select_threshold(pipeline_template, X_train, y_train, groups, cv):
 
     Why this is necessary: with a 71:1 class imbalance, the default
     decision threshold can (and here, does) end up predicting the
-    majority class for every single example -- 0 recall -- even though
+    majority class for almost every example -- 1 of 8 test positives
+    caught, 12.5% recall -- even though
     the model's *ranking* of examples (ROC-AUC, PR-AUC) is reasonably
     good. The fix isn't a better model, it's picking a better cutoff on
     the score the model already produces.
