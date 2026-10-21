@@ -1,8 +1,8 @@
 """FastAPI endpoint tests via TestClient. Requires models/face_classifier.joblib
 to exist (produced by `python src/train.py`) since the app loads it on startup.
 """
-import numpy as np
 import cv2
+import numpy as np
 import pytest
 from fastapi.testclient import TestClient
 

@@ -13,6 +13,7 @@ import mlflow
 import mlflow.sklearn
 import numpy as np
 from sklearn.base import clone
+from sklearn.decomposition import PCA
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
     average_precision_score,
@@ -24,12 +25,20 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score,
 )
-from sklearn.model_selection import GridSearchCV, StratifiedGroupKFold, cross_val_predict
+from sklearn.model_selection import (
+    GridSearchCV,
+    StratifiedGroupKFold,
+    cross_val_predict,
+)
 from sklearn.pipeline import Pipeline
-from sklearn.decomposition import PCA
 from sklearn.svm import SVC
 
-from data import RANDOM_STATE, augment_positive_class, load_binary_face_dataset, split_dataset
+from data import (
+    RANDOM_STATE,
+    augment_positive_class,
+    load_binary_face_dataset,
+    split_dataset,
+)
 
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 ARTIFACTS_DIR = os.path.join(os.path.dirname(__file__), "..", "artifacts")

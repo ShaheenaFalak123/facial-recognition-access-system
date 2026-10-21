@@ -1,0 +1,4 @@
+[lint.flake8-bugbear]
+# FastAPI declares request parameters as call defaults (`file: UploadFile = File(...)`);
+# these are evaluated once by design and are safe, so don't flag them under B008.
+extend-immutable-calls = ["fastapi.File", "fastapi.Depends", "fastapi.Query", "fastapi.Form"]

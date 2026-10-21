@@ -7,8 +7,8 @@ a "detected face" is needed, we monkeypatch detect_and_crop_face rather
 than relying on the Haar cascade actually finding a face in a synthetic
 image.
 """
-import numpy as np
 import cv2
+import numpy as np
 import pytest
 
 from inference import (
